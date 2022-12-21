@@ -1,53 +1,120 @@
-body{
+@font-face {
+    font-family: Dunkin;
+    src: url(../fonts/Dunkin.otf);
+}
+body {
     margin: 0;
 }
-#background{
-     width: 100vw;
+
+#background {
+    width: 100vw;
     height: 100vh;
     background-color: #474747;
     background-image: url("../img/bg.jpg");
     background-size: cover;
 }
-#bgOpacity{
+
+#bgOpacity {
     width: 100vw;
     height: 100vh;
     background-color: #4747476b;
-    
+
 }
-#boxPrincipal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    
-}
-#card{
+
+#boxPrincipal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
-    background-color: #fffa;
-    width: 300px;
-    height: 150px;
+    height: 100%;
+    width: 100%;
+}
+.flexLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#boxPrincipal #boxLogo {
+    position: fixed;
+    top: 45px;
+    height: auto;
+    object-fit: cover;
+
+}
+#boxPrincipal #boxLogo img{
+     margin-top: 18px;
+    width: 100px;
+    margin-left: 18px;
+    filter:drop-shadow(2px 2px 4px #d37b07)
+}
+#boxPrincipal #boxLogo #nomeApp{
+    font-family: Dunkin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+#boxPrincipal #boxLogo #nomeApp #lblClima{
+    text-shadow: 2px 2px 6px #d37b07;
+    margin-left: -2px;
+    color: #FFF;
+}
+#boxPrincipal #boxLogo #nomeApp #lblTempo{
+    color: #EC9929;
+    margin-top: -14px;
+    margin-left: -18px;
+    transform: rotate(-5deg);
+    text-shadow: 2px 2px 6px #CBF7FF;
+
 }
 
-#card #boxInput input{
-    margin: 10px 0 10px 0;
-    border-radius: 8px;
-    background-color: #788da5;
-    border-color: #fff;
-    padding: 5px 5px 5px 3px;
-    color: #fff;
-    font-size: 20px;
+
+#boxInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, #5F839AAA 40% , #4a6e85AA 80%);
+    box-shadow: 0 0 10px 1px #CBF7FF;
+    width: 300px;
+    height:auto;
+    padding: 10px;
+}
+
+
+#boxInput input{
+    padding-left: 12px;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 16px;
+    outline: none;
+    background-color:#d9eaf5;
+    color: #d37b07;
+    font-size: 18px;
+    font-weight: 600;
+}
+#boxInput input::placeholder{
+    color: #bd8b4b;
+}
+
+#boxButton{
+    margin-top: 15px;
+}
+#boxButton input{
+    background: #EC9929;
+    object-fit: contain;
+    width: 130px;
+    border-radius: 25px;
+    height: 45px;
+    padding: 5px 5px;
     outline: none;
 }
-#card #boxInput input:hover{
-    box-shadow: -2 0 7px 1px #e28e20 ;
-}
-#card #boxInput input::placeholder{
-    color: #cac9c9;
-}
-#card #boxButton {
-margin-top: 30px;
+#boxButton input:hover{
+    box-shadow: 0 0 10px 1px #CBF7FF;
+    background: #faa83d;
 }
