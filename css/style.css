@@ -2,6 +2,7 @@
     font-family: Dunkin;
     src: url(../fonts/Dunkin.otf);
 }
+
 body {
     margin: 0;
 }
@@ -15,6 +16,10 @@ body {
 }
 
 #bgOpacity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     background-color: #4747476b;
@@ -29,25 +34,29 @@ body {
     height: 100%;
     width: 100%;
 }
-.flexLogo{
+
+.flexLogo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #boxPrincipal #boxLogo {
-    position: fixed;
-    top: 45px;
     height: auto;
     object-fit: cover;
+    margin-left: -20px;
+    margin-top: 25px;
 
 }
-#boxPrincipal #boxLogo img{
-     margin-top: 18px;
+
+#boxPrincipal #boxLogo img {
+    margin-top: 18px;
     width: 100px;
     margin-left: 18px;
-    filter:drop-shadow(2px 2px 4px #d37b07)
+    filter: drop-shadow(2px 2px 4px #d37b07)
 }
-#boxPrincipal #boxLogo #nomeApp{
+
+#boxPrincipal #boxLogo #nomeApp {
     font-family: Dunkin;
     display: flex;
     flex-direction: column;
@@ -56,12 +65,14 @@ body {
     font-weight: 400;
     letter-spacing: 5px;
 }
-#boxPrincipal #boxLogo #nomeApp #lblClima{
+
+#boxPrincipal #boxLogo #nomeApp #lblClima {
     text-shadow: 2px 2px 6px #d37b07;
     margin-left: -2px;
     color: #FFF;
 }
-#boxPrincipal #boxLogo #nomeApp #lblTempo{
+
+#boxPrincipal #boxLogo #nomeApp #lblTempo {
     color: #EC9929;
     margin-top: -14px;
     margin-left: -18px;
@@ -77,44 +88,162 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background-image: linear-gradient(to bottom, #5F839AAA 40% , #4a6e85AA 80%);
-    box-shadow: 0 0 10px 1px #CBF7FF;
-    width: 300px;
-    height:auto;
-    padding: 10px;
+    background-image: linear-gradient(to bottom, #5F839AAA 40%, #4a6e85AA 80%);
+    width: 450px;
+    height: auto;
+    margin-top: 20px;
 }
 
 
-#boxInput input{
-    padding-left: 12px;
+#boxInput input {
     text-align: center;
     width: 100%;
     height: 50px;
     border: none;
     border-radius: 16px;
+    filter: drop-shadow(0px 0px 6px #99c4cc);
     outline: none;
-    background-color:#d9eaf5;
+    background-color: #d9eaf5;
     color: #d37b07;
     font-size: 18px;
     font-weight: 600;
+    transition: filter 0.3s;
 }
-#boxInput input::placeholder{
+
+#boxInput input:hover,#boxInput:focus{
+    filter: drop-shadow(0px 0px 7px #CBF7FF);
+}
+
+#boxInput input::placeholder {
     color: #bd8b4b;
 }
 
-#boxButton{
-    margin-top: 15px;
+#boxButton {
+    margin-top: 20px;
 }
-#boxButton input{
+
+#boxButton input {
     background: #EC9929;
-    object-fit: contain;
-    width: 130px;
-    border-radius: 25px;
-    height: 45px;
-    padding: 5px 5px;
-    outline: none;
+    filter: drop-shadow(0px 0px 0px #CBF7FF);
+    border-radius:50px;
+    height: 50px;
+    padding: 15px;
+    transition: filter 0.3s;
+    
 }
-#boxButton input:hover{
-    box-shadow: 0 0 10px 1px #CBF7FF;
+
+#boxButton input:hover,#boxButton input:focus {
+    filter: drop-shadow(0px 0px 6px #CBF7FF);
     background: #faa83d;
+}
+
+#creditos {
+    margin-top: 80px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 1px #000;
+}
+
+#creditos a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#creditos a:visited {
+    color: #fff;
+}
+
+#creditos a:hover{
+    color: #faa83d;
+    text-decoration: underline;
+}
+
+#boxResult {
+    background: linear-gradient(to bottom, #5A819888,#21485f88);
+    filter: drop-shadow(0 0 2px #CBF7FF);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 450px;
+    min-height:250px;
+    margin-top: 20px;
+    
+}
+#boxResult #titleResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#boxResult #titleResult label{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 3px;
+}
+
+#boxResult #boxTemperatura{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+#boxResult #boxTemperatura label{
+    text-align: center;
+    width: 50%;
+    font-size: 44px;
+    color: #fff;
+    font-weight: 600;
+
+}
+#boxResult #boxTemperatura picture{
+    width: 50%;
+    text-align: center;
+    border-left: 4px solid #fff;
+}
+#boxResult #boxTemperatura img{
+    width: 70px;
+}
+#boxResult #boxInfoRestantes{
+    border-top:2px solid #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#boxResult #boxInfoRestantes #umidade,#velocidade{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-top: 8px;
+}
+
+#boxResult #boxInfoRestantes #umidade img, #velocidade img{
+    width: 30px;
+}
+#boxResult #boxInfoRestantes #umidade label, #velocidade label{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+
+@media screen and (max-width: 400px)  {
+    #boxInput,#boxResult{
+        width: 250px;
+    }
+    #boxInput input{
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 640px)  {
+    #boxInput,#boxResult{
+        width: 350px;
+    }
 }
