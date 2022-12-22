@@ -122,19 +122,26 @@ body {
     margin-top: 20px;
 }
 
-#boxButton input {
-    background: #EC9929;
-    filter: drop-shadow(0px 0px 0px #CBF7FF);
+#boxButton button {
+    background-color: #d37b07;
+    filter: drop-shadow(0px 0px 4px #CBF7FF);
     border-radius:50px;
-    height: 50px;
-    padding: 15px;
-    transition: filter 0.3s;
+    border: none;
+    width: 90px;
+    height: 90px;
+    transition: all 0.5s;
+    padding: 20px;
+
     
 }
+#boxButton img{
+    width: 100%;
+}
 
-#boxButton input:hover,#boxButton input:focus {
-    filter: drop-shadow(0px 0px 6px #CBF7FF);
-    background: #faa83d;
+
+#boxButton button:active {
+    background: #633a05;
+    filter: drop-shadow(0px 0px 8px #CBF7FF);
 }
 
 #creditos {
