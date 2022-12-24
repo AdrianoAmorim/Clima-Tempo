@@ -29,39 +29,42 @@
                 </div>
 
                 <div id="boxInput">
-                    <input type="text" placeholder="DIGITE A LOCALIZAÇÃO" />
+                    <input type="text" id="inpLocalizacao" value="" placeholder="DIGITE A LOCALIZAÇÃO" />
                 </div>
 
 
-                <div id="boxResult">
+                <div id="boxResult" class="show">
                     <div id="titleResult">
-                        <label>Cachoeiro de Itapemirim</label>
-                        <label>Espírito Santo</label>
+                        <label>--</label>
+                        <picture>
+                            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="IconTempo" />
+                        </picture>
                     </div>
                     <div id="boxTemperatura">
-                        <label>28ºC</label>
+                        <label><span>--</span>&deg;C</label>
                         <picture>
-                            <img src="./img/logo.png" alt="IconTempo" />
+                            <img src="http://openweathermap.org/img/wn/01d.png" alt="IconTempo" />
+                            <label>-</label>
                         </picture>
                     </div>
                     <div id="boxInfoRestantes">
                         <div id="umidade">
                             <picture>
-                                <img src="./img/btnIconPesquisar.png" alt="iconUmidade">
+                                <img src="./img/iconUmidade.png" alt="iconUmidade">
                             </picture>
-                        <label>100%</label>
+                            <label>--</label>
                         </div>
                         <div id="velocidade">
                             <picture>
-                                <img src="./img/btnIconPesquisar.png" alt="iconUmidade">
+                                <img src="./img/iconVelocidade.png" alt="iconVelocidade">
                             </picture>
-                            <label>80 Km/h</label>
+                            <label>--</label>
                         </div>
                     </div>
                 </div>
 
                 <div id="boxButton">
-                    <button>
+                    <button id="btnBuscar">
                         <img src="./img/btnIconPesquisar.png" alt="btnBuscar">
                     </button>
                 </div>
@@ -77,7 +80,7 @@
     </div>
 
 
-
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 
 </html>

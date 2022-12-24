@@ -3,6 +3,7 @@
     src: url(../fonts/Dunkin.otf);
 }
 
+
 body {
     margin: 0;
 }
@@ -110,7 +111,8 @@ body {
     transition: filter 0.3s;
 }
 
-#boxInput input:hover,#boxInput:focus{
+#boxInput input:hover,
+#boxInput:focus {
     filter: drop-shadow(0px 0px 7px #CBF7FF);
 }
 
@@ -125,23 +127,28 @@ body {
 #boxButton button {
     background-color: #d37b07;
     filter: drop-shadow(0px 0px 4px #CBF7FF);
-    border-radius:50px;
+    border-radius: 50px;
     border: none;
     width: 90px;
     height: 90px;
     transition: all 0.5s;
     padding: 20px;
 
-    
+
 }
-#boxButton img{
+
+#boxButton img {
     width: 100%;
 }
 
+#boxButton button:hover {
+    filter: drop-shadow(0px 0px 6px #CBF7FF);
+
+}
 
 #boxButton button:active {
     background: #633a05;
-    filter: drop-shadow(0px 0px 8px #CBF7FF);
+    filter: drop-shadow(0px 0px 10px #CBF7FF);
 }
 
 #creditos {
@@ -162,44 +169,50 @@ body {
     color: #fff;
 }
 
-#creditos a:hover{
+#creditos a:hover {
     color: #faa83d;
     text-decoration: underline;
 }
 
 #boxResult {
-    background: linear-gradient(to bottom, #5A819888,#21485f88);
+    background: linear-gradient(to bottom, #5A819888, #21485f88);
     filter: drop-shadow(0 0 2px #CBF7FF);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 450px;
-    min-height:250px;
+    min-height: 250px;
     margin-top: 20px;
-    
+
 }
-#boxResult #titleResult{
+
+#boxResult #titleResult {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
+
 }
-#boxResult #titleResult label{
+
+#boxResult #titleResult label {
     color: #fff;
     font-size: 20px;
     font-weight: 400;
     margin: 3px;
 }
+#boxResult #titleResult img{
+    width: 40px;
+}
 
-#boxResult #boxTemperatura{
+#boxResult #boxTemperatura {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
 
 }
+
 #boxResult #boxTemperatura label{
     text-align: center;
     width: 50%;
@@ -208,21 +221,35 @@ body {
     font-weight: 600;
 
 }
-#boxResult #boxTemperatura picture{
+
+#boxResult #boxTemperatura picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 50%;
     text-align: center;
     border-left: 4px solid #fff;
+    margin: 0;
 }
-#boxResult #boxTemperatura img{
-    width: 70px;
+#boxResult #boxTemperatura picture label{
+    font-size: 16px;
+    font-weight: 400;
 }
-#boxResult #boxInfoRestantes{
-    border-top:2px solid #fff;
+
+#boxResult #boxTemperatura img {
+    width: 80px;
+}
+
+#boxResult #boxInfoRestantes {
+    border-top: 2px solid #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-#boxResult #boxInfoRestantes #umidade,#velocidade{
+
+#boxResult #boxInfoRestantes #umidade,
+#velocidade {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,27 +257,50 @@ body {
     margin-top: 8px;
 }
 
-#boxResult #boxInfoRestantes #umidade img, #velocidade img{
+#boxResult #boxInfoRestantes #umidade img,
+#velocidade img {
     width: 30px;
 }
-#boxResult #boxInfoRestantes #umidade label, #velocidade label{
+
+#boxResult #boxInfoRestantes #umidade label,
+#velocidade label {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
     margin-left: 5px;
 }
 
+.hidden {
+    display: none !important;
+}
 
-@media screen and (max-width: 400px)  {
-    #boxInput,#boxResult{
-        width: 250px;
+.show {
+    display: flex !important;
+}
+
+@media screen and (max-width: 400px) {
+
+    #boxInput,
+    #boxResult {
+        width: 280px;
     }
-    #boxInput input{
+    #boxResult #titleResult{
+        flex-direction: column;
+        text-align: center;
+    }
+    #boxInput input {
         font-size: 16px;
     }
 }
-@media screen and (min-width: 401px) and (max-width: 640px)  {
-    #boxInput,#boxResult{
+
+@media screen and (min-width: 401px) and (max-width: 640px) {
+
+    #boxInput,
+    #boxResult {
         width: 350px;
+    }
+    #boxResult #titleResult{
+        flex-direction: column;
+        text-align: center;
     }
 }
