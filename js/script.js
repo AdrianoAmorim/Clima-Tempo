@@ -44,7 +44,7 @@ const getClima = async (cidade) => {
 
 }
 const setValores = (data) => { 
-    boxResult.classList.replace('hidden', 'show');
+    boxResult.classList.remove('hidden');
     nomeCidade.innerText = data.name +" - " + data.sys.country ;
     temp.innerText = parseInt(data.main.temp);
     imgTemp.setAttribute("src",`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
@@ -62,4 +62,15 @@ btnBuscar.addEventListener('click', () => {
         getClima(cidade);
     }
 
+})
+
+inpLocalizacao.addEventListener("keyup",(e)=>{
+    if(e.code === 'Enter'){
+        if(inpLocalizacao.value.length == 0){
+            alert("Campo Vazio favor Preencher")
+        }else{
+            const cidade = inpLocalizacao.value;
+            getClima(cidade);
+        }
+    }
 })
