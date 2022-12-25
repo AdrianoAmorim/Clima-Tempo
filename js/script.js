@@ -82,4 +82,5 @@ inpLocalizacao.addEventListener("keyup",(e)=>{
 
 inpLocalizacao.addEventListener('focus',()=>{
     boxAvisos.setAttribute("class","hidden");
+    boxResult.setAttribute("class","hidden")
 })
