@@ -174,7 +174,7 @@ body {
     text-decoration: underline;
 }
 
-#boxResult {
+#boxResult,#boxAvisos {
     background: linear-gradient(to bottom, #5A819888, #21485f88);
     filter: drop-shadow(0 0 2px #CBF7FF);
     border-radius: 20px;
@@ -182,7 +182,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     width: 450px;
-    min-height: 250px;
+    height: auto;
     margin-top: 20px;
 
 }
@@ -266,8 +266,26 @@ body {
 #velocidade label {
     color: #fff;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     margin-left: 5px;
+}
+
+#boxAvisos{
+    background: linear-gradient(to bottom, #ec202088, #c70a0a88);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#boxAvisos label{
+    color:#fff;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 10px;
+}
+#boxAvisos img{
+    margin-bottom:10px ;
+    width: 40px;
 }
 
 .hidden {
@@ -281,7 +299,7 @@ body {
 @media screen and (max-width: 400px) {
 
     #boxInput,
-    #boxResult {
+    #boxResult,#boxAvisos {
         width: 280px;
     }
     #boxResult #titleResult{
@@ -296,7 +314,7 @@ body {
 @media screen and (min-width: 401px) and (max-width: 640px) {
 
     #boxInput,
-    #boxResult {
+    #boxResult,#boxAvisos {
         width: 350px;
     }
     #boxResult #titleResult{

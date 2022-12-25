@@ -10,6 +10,8 @@ const imgUmidade = document.querySelector('#boxInfoRestantes #umidade img');
 const velocidade = document.querySelector('#boxInfoRestantes #velocidade label');
 const imgVelocidade = document.querySelector('#boxTemperatura #velocidade img');
 const btnBuscar = document.getElementById('btnBuscar');
+const boxAvisos = document.getElementById('boxAvisos');
+const lblAvisos = document.querySelector("#boxAvisos label")
 
 
 //URLS E KEY ID
@@ -27,7 +29,6 @@ const getClima = async (cidade) => {
             return res
         } else {
             //senao ela gera um erro e devolve p catch o status do erro q veio da requisicao
-
             throw Error(res.statusText)
         }
     }).catch(err => {
@@ -39,7 +40,9 @@ const getClima = async (cidade) => {
         console.log(dataJson)
         setValores(dataJson)
     } else {
-        alert("Desculpe, não achamos a Cidade!")
+        lblAvisos.innerText = "OPS! Cidade Não Encontrada !"
+        boxAvisos.classList.remove("hidden");
+
     }
 
 }
@@ -56,7 +59,8 @@ const setValores = (data) => {
 //EVENTOS
 btnBuscar.addEventListener('click', () => {
     if(inpLocalizacao.value.length == 0){
-        alert("Campo Vazio favor Preencher")
+        lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
+        boxAvisos.classList.remove("hidden");
     }else{
         const cidade = inpLocalizacao.value;
         getClima(cidade);
@@ -67,10 +71,15 @@ btnBuscar.addEventListener('click', () => {
 inpLocalizacao.addEventListener("keyup",(e)=>{
     if(e.code === 'Enter'){
         if(inpLocalizacao.value.length == 0){
-            alert("Campo Vazio favor Preencher")
+            lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
+            boxAvisos.classList.remove("hidden");
         }else{
             const cidade = inpLocalizacao.value;
             getClima(cidade);
         }
     }
+})
+
+inpLocalizacao.addEventListener('focus',()=>{
+    boxAvisos.setAttribute("class","hidden");
 })
