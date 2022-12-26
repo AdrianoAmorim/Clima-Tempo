@@ -50,7 +50,7 @@ const setValores = (data) => {
     boxResult.classList.remove('hidden');
     nomeCidade.innerText = data.name +" - " + data.sys.country ;
     temp.innerText = parseInt(data.main.temp);
-    imgTemp.setAttribute("src",`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+    imgTemp.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     descricaoTemp.innerText = data.weather[0].description.toUpperCase() 
     umidade.innerText = data.main.humidity + "%"
     velocidade.innerText = `${data.wind.speed}km/h` 
