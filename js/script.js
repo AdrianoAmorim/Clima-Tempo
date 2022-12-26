@@ -20,9 +20,9 @@ const urlClima = "https://api.openweathermap.org/data/2.5/weather?q="
 
 //FUNÇÕES
 //FUNÇÃO PARA LIBERAR A ENTRADA NO APP QUANDO TUDO TIVER SIDO CARREGADO
-const loading = () =>{
-   document.getElementById("background").classList.remove("hidden")
-   document.getElementById("background").classList.add("fadeIn")
+const loading = () => {
+    document.getElementById("background").classList.remove("hidden")
+    document.getElementById("background").classList.add("fadeIn")
 }
 //faz a requisição e pega o clima escolhido e chama funcao para setar os dados
 const getClima = async (cidade) => {
@@ -43,8 +43,6 @@ const getClima = async (cidade) => {
     if (data) {
         const dataJson = await data.json();
         setValores(dataJson);
-        boxResult.classList.remove("hidden");
-        boxResult.classList.add("showAnimation")
     } else {
         lblAvisos.innerText = "OPS! Cidade Não Encontrada !"
         boxAvisos.classList.remove("hidden");
@@ -54,46 +52,53 @@ const getClima = async (cidade) => {
 
 }
 //SETA OS VALORES NOS COMPONENTES
-const setValores = (data) => { 
-    nomeCidade.innerText = data.name +" - " + data.sys.country ;
-    imgPais.setAttribute("src",`https://countryflagsapi.com/png/${data.sys.country}`)
-    temp.innerText = parseInt(data.main.temp);
-    imgTemp.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
-    descricaoTemp.innerText = data.weather[0].description.toUpperCase() 
-    umidade.innerText = data.main.humidity + "%"
-    velocidade.innerText = `${data.wind.speed}km/h` 
+const setValores = (data) => {
     
+    imgPais.setAttribute("src", `https://countryflagsapi.com/png/${data.sys.country}`);
+    imgTemp.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+    nomeCidade.innerText = data.name + " - " + data.sys.country;
+    temp.innerText = parseInt(data.main.temp);
+    descricaoTemp.innerText = data.weather[0].description.toUpperCase()
+    umidade.innerText = data.main.humidity + "%"
+    velocidade.innerText = `${data.wind.speed}km/h`
+    boxResult.classList.remove("hidden", "fecharBox");
+    boxResult.classList.add("showAnimation")
+
 }
 
 //EVENTOS
 btnBuscar.addEventListener('click', () => {
-    if(inpLocalizacao.value.length == 0){
+    if (inpLocalizacao.value.length == 0) {
         lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
         boxAvisos.classList.remove("hidden");
         boxAvisos.classList.add("showAnimation")
-    }else{
+    } else {
         const cidade = inpLocalizacao.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
         getClima(cidade);
     }
 
 })
 
-inpLocalizacao.addEventListener("keyup",(e)=>{
-    if(e.code === 'Enter'){
-        if(inpLocalizacao.value.length == 0){
+inpLocalizacao.addEventListener("keyup", (e) => {
+    if (e.code === 'Enter') {
+        if (inpLocalizacao.value.length == 0) {
             lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
             boxAvisos.classList.remove("hidden");
             boxAvisos.classList.add("showAnimation");
-        }else{
+        } else {
             const cidade = inpLocalizacao.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");;
             getClima(cidade);
         }
     }
 })
 
-inpLocalizacao.addEventListener('focus',()=>{
+inpLocalizacao.addEventListener('focus', () => {
+    resetCampos();
+})
+
+const resetCampos = () => {
     boxAvisos.classList.remove("showAnimation");
     boxResult.classList.remove("showAnimation");
     boxAvisos.classList.add("hidden");
     boxResult.classList.add("hidden");
-})
+}
