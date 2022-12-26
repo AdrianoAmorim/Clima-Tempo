@@ -7,7 +7,7 @@
 body {
     margin: 0;
 }
-
+/*ESTILOS DE BACKGROUND E CAMADAS DE FUNDO*/
 #background {
     width: 100vw;
     height: 100vh;
@@ -36,7 +36,8 @@ body {
     width: 100%;
     outline: none;
 }
-
+/*-------------------------------------------------------------------------*/
+/*ESTILOS DA LOGO DO APP*/
 .flexLogo {
     display: flex;
     justify-content: center;
@@ -82,8 +83,9 @@ body {
     text-shadow: 2px 2px 6px #CBF7FF;
 
 }
+/*--------------------------------------------------------------------------*/
 
-
+/*ESTILOS DO INPUT */
 #boxInput {
     display: flex;
     flex-direction: column;
@@ -121,7 +123,9 @@ body {
 #boxInput input::placeholder {
     color: #bd8b4b;
 }
+/*------------------------------------------------------*/
 
+/*ESTILOS DO BOTAO DE BUSCA*/
 #boxButton {
     margin-top: 20px;
     outline: none;
@@ -151,7 +155,9 @@ body {
     filter: drop-shadow(0px 0px 4px #CBF7FF);
     background: #633a05;
 }
+/*------------------------------------------------------------------*/
 
+/*ESTILOS DO TEXTO DE CREDITOS*/
 #creditos {
     margin-top: 10%;
     color: #fff;
@@ -174,7 +180,9 @@ body {
     color: #faa83d;
     text-decoration: underline;
 }
+/*-------------------------------------------------------------*/
 
+/*ESTILOS DAS BOX DE AVISOS E DO RESULTADO DA BUSCA*/
 #boxResult,
 #boxAvisos {
     background: linear-gradient(to bottom, #5A819888, #21485f88);
@@ -277,6 +285,7 @@ body {
     margin-left: 5px;
 }
 
+/*BOX AVISOS -----*/
 #boxAvisos {
     background: linear-gradient(to bottom, #ec202088, #c70a0a88);
     align-items: center;
@@ -298,6 +307,7 @@ body {
     margin-bottom: 10px;
     width: 40px;
 }
+/*ESTILO DO LOADER*/
 #loader{
     width: 30px;
     height: 30px;
@@ -307,7 +317,7 @@ body {
     border-radius: 50%;
     animation: loader 1s linear infinite;
 }
-
+/*CLASSES GERAIS PARA ANIMAÇÃO E ESCONDER ELEMENTOS*/
 .hidden {
     display: none !important;
 }
@@ -346,7 +356,7 @@ body {
     }
 }
 
-
+/*MEDIAS PARA ADAPTACAO DO LAYOUT PARA RESOLUCOES DIFERENTES*/
 @media screen and (max-width: 400px) {
 
     #boxInput,

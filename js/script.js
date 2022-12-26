@@ -15,7 +15,7 @@ const boxAvisos = document.getElementById('boxAvisos');
 const lblAvisos = document.querySelector("#boxAvisos label")
 
 
-//URLS E KEY ID
+//URLS da API
 const urlClima = "https://api.openweathermap.org/data/2.5/weather?q="
 
 //FUNÇÕES
@@ -73,7 +73,6 @@ btnBuscar.addEventListener('click', () => {
         boxAvisos.classList.add("showAnimation")
     }else{
         const cidade = inpLocalizacao.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-        console.log(cidade)
         getClima(cidade);
     }
 
@@ -86,7 +85,7 @@ inpLocalizacao.addEventListener("keyup",(e)=>{
             boxAvisos.classList.remove("hidden");
             boxAvisos.classList.add("showAnimation");
         }else{
-            const cidade = inpLocalizacao.value;
+            const cidade = inpLocalizacao.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");;
             getClima(cidade);
         }
     }
