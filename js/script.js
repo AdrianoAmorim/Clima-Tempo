@@ -37,23 +37,25 @@ const getClima = async (cidade) => {
     //testa se veio os dados corretamente ou não
     if (data) {
         const dataJson = await data.json();
-        console.log(dataJson)
         setValores(dataJson)
     } else {
         lblAvisos.innerText = "OPS! Cidade Não Encontrada !"
         boxAvisos.classList.remove("hidden");
+        boxAvisos.classList.add("showAnimation")
 
     }
 
 }
+//SETA OS VALORES NOS COMPONENTES
 const setValores = (data) => { 
-    boxResult.classList.remove('hidden');
     nomeCidade.innerText = data.name +" - " + data.sys.country ;
     temp.innerText = parseInt(data.main.temp);
     imgTemp.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     descricaoTemp.innerText = data.weather[0].description.toUpperCase() 
     umidade.innerText = data.main.humidity + "%"
     velocidade.innerText = `${data.wind.speed}km/h` 
+    boxResult.classList.remove("hidden");
+    boxResult.classList.add("showAnimation")
 }
 
 //EVENTOS
@@ -61,7 +63,7 @@ btnBuscar.addEventListener('click', () => {
     if(inpLocalizacao.value.length == 0){
         lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
         boxAvisos.classList.remove("hidden");
-        boxAvisos.setAttribute('class','startBox')
+        boxAvisos.classList.add("showAnimation")
     }else{
         const cidade = inpLocalizacao.value;
         getClima(cidade);
@@ -74,6 +76,7 @@ inpLocalizacao.addEventListener("keyup",(e)=>{
         if(inpLocalizacao.value.length == 0){
             lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
             boxAvisos.classList.remove("hidden");
+            boxAvisos.classList.add("showAnimation");
         }else{
             const cidade = inpLocalizacao.value;
             getClima(cidade);
@@ -82,6 +85,8 @@ inpLocalizacao.addEventListener("keyup",(e)=>{
 })
 
 inpLocalizacao.addEventListener('focus',()=>{
-    boxAvisos.setAttribute("class","hidden");
-    boxResult.setAttribute("class","hidden")
+    boxAvisos.classList.remove("showAnimation");
+    boxResult.classList.remove("showAnimation");
+    boxAvisos.classList.add("hidden");
+    boxResult.classList.add("hidden");
 })
