@@ -18,7 +18,11 @@ const lblAvisos = document.querySelector("#boxAvisos label")
 const urlClima = "https://api.openweathermap.org/data/2.5/weather?q="
 
 //FUNÇÕES
-
+//FUNÇÃO PARA LIBERAR A ENTRADA NO APP QUANDO TUDO TIVER SIDO CARREGADO
+const loading = () =>{
+   document.getElementById("background").classList.remove("hidden")
+   document.getElementById("background").classList.add("fadeIn")
+}
 //faz a requisição e pega o clima escolhido e chama funcao para setar os dados
 const getClima = async (cidade) => {
     const url = `${urlClima}+${cidade}+&units=metric&lang=pt_br&appid=a44fd137625e071dc722ea150b72725b`

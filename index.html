@@ -9,8 +9,8 @@
     <title>Será que Vai Chover?</title>
 </head>
 
-<body>
-    <div id="background">
+<body onload="loading()">
+    <div id="background" class="hidden">
         <div id="bgOpacity">
 
 
@@ -31,9 +31,11 @@
                 <div id="boxInput">
                     <input type="text" id="inpLocalizacao" value="" placeholder="DIGITE A LOCALIZAÇÃO" />
                 </div>
+                    <div id="loader" class="hidden">
 
+                    </div>
                 <div id="boxAvisos" class="hidden">
-                    <label>dasdasda</label>
+                    <label>--</label>
                     <picture>
                     <img src="./img/iconAvisos.png"alt="iconAviso"/>
                     </picture>

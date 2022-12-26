@@ -126,7 +126,7 @@ body {
 
 #boxButton button {
     background-color: #d37b07;
-    filter: drop-shadow(0px 0px 4px #CBF7FF);
+    filter: drop-shadow(0px 0px 0px #CBF7FF);
     border-radius: 50px;
     border: none;
     width: 90px;
@@ -142,13 +142,13 @@ body {
 }
 
 #boxButton button:hover {
-    filter: drop-shadow(0px 0px 6px #CBF7FF);
+    filter: drop-shadow(0px 0px 4px #CBF7FF);
 
 }
 
 #boxButton button:active {
+    filter: drop-shadow(0px 0px 4px #CBF7FF);
     background: #633a05;
-    filter: drop-shadow(0px 0px 10px #CBF7FF);
 }
 
 #creditos {
@@ -177,13 +177,13 @@ body {
 #boxResult,
 #boxAvisos {
     background: linear-gradient(to bottom, #5A819888, #21485f88);
-    filter: drop-shadow(0 0 2px #CBF7FF);
-    border-radius: 20px;
+   box-shadow: 0 0 2px #CBF7FF ; 
+   border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 450px;
-    max-height: auto;
+    height: auto;
     opacity: 0;
     margin-top: 20px;
     transform: translateY(-40px);
@@ -295,25 +295,49 @@ body {
     margin-bottom: 10px;
     width: 40px;
 }
+#loader{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 8px solid #d37b07;
+    border-top: 8px solid transparent;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+}
 
 .hidden {
     display: none !important;
 }
 
 .showAnimation {
-
-    animation-name: mostrarAvisos;
-    animation-duration: .3s;
-    animation-fill-mode: forwards;
+ animation: slideFadeIn .3s forwards;
+}
+.fadeIn{
+    animation: fadeIn .2s forwards;
 }
 
-@keyframes mostrarAvisos {
+/*ANIMAÇÃO PARA APRESENTAR AS TELAS DE AVISOS E RESULTADO*/
+@keyframes slideFadeIn {
     from {
         opacity: 0;
     }
 
     to {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+/*ANIMAÇÃO DO LOADER */
+@keyframes loader {
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
         opacity: 1;
     }
 }
