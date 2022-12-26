@@ -42,7 +42,9 @@ const getClima = async (cidade) => {
     //testa se veio os dados corretamente ou não
     if (data) {
         const dataJson = await data.json();
-        setValores(dataJson)
+        setValores(dataJson);
+        boxResult.classList.remove("hidden");
+        boxResult.classList.add("showAnimation")
     } else {
         lblAvisos.innerText = "OPS! Cidade Não Encontrada !"
         boxAvisos.classList.remove("hidden");
@@ -54,15 +56,13 @@ const getClima = async (cidade) => {
 //SETA OS VALORES NOS COMPONENTES
 const setValores = (data) => { 
     nomeCidade.innerText = data.name +" - " + data.sys.country ;
-    console.log(data.sys.country)
     imgPais.setAttribute("src",`https://countryflagsapi.com/png/${data.sys.country}`)
     temp.innerText = parseInt(data.main.temp);
     imgTemp.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     descricaoTemp.innerText = data.weather[0].description.toUpperCase() 
     umidade.innerText = data.main.humidity + "%"
     velocidade.innerText = `${data.wind.speed}km/h` 
-    boxResult.classList.remove("hidden");
-    boxResult.classList.add("showAnimation")
+    
 }
 
 //EVENTOS
@@ -72,7 +72,8 @@ btnBuscar.addEventListener('click', () => {
         boxAvisos.classList.remove("hidden");
         boxAvisos.classList.add("showAnimation")
     }else{
-        const cidade = inpLocalizacao.value;
+        const cidade = inpLocalizacao.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        console.log(cidade)
         getClima(cidade);
     }
 
