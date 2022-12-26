@@ -2,6 +2,7 @@
 const inpLocalizacao = document.getElementById('inpLocalizacao');
 const boxResult = document.getElementById('boxResult');
 const nomeCidade = document.querySelector('#titleResult label');
+const imgPais = document.querySelector('#titleResult img');
 const temp = document.querySelector('#boxTemperatura label span');
 const imgTemp = document.querySelector('#boxTemperatura img');
 const descricaoTemp = document.querySelector('#boxTemperatura picture label');
@@ -53,6 +54,8 @@ const getClima = async (cidade) => {
 //SETA OS VALORES NOS COMPONENTES
 const setValores = (data) => { 
     nomeCidade.innerText = data.name +" - " + data.sys.country ;
+    console.log(data.sys.country)
+    imgPais.setAttribute("src",`https://countryflagsapi.com/png/${data.sys.country}`)
     temp.innerText = parseInt(data.main.temp);
     imgTemp.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     descricaoTemp.innerText = data.weather[0].description.toUpperCase() 

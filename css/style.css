@@ -32,8 +32,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: auto;
+    width: 100%;
+    outline: none;
 }
 
 .flexLogo {
@@ -93,6 +94,7 @@ body {
     width: 450px;
     height: auto;
     margin-top: 20px;
+     outline: none;
 }
 
 
@@ -122,6 +124,7 @@ body {
 
 #boxButton {
     margin-top: 20px;
+    outline: none;
 }
 
 #boxButton button {
@@ -133,8 +136,6 @@ body {
     height: 90px;
     transition: all 0.5s;
     padding: 20px;
-
-
 }
 
 #boxButton img {
@@ -187,6 +188,7 @@ body {
     opacity: 0;
     margin-top: 20px;
     transform: translateY(-40px);
+     outline: none;
 }
 
 #boxResult #titleResult {
@@ -206,6 +208,7 @@ body {
 
 #boxResult #titleResult img {
     width: 40px;
+    padding: 10px;
 }
 
 #boxResult #boxTemperatura {
@@ -333,6 +336,7 @@ body {
         transform: rotate(360deg);
     }
 }
+/*Fade IN*/
 @keyframes fadeIn {
     from{
         opacity: 0;
@@ -341,6 +345,7 @@ body {
         opacity: 1;
     }
 }
+
 
 @media screen and (max-width: 400px) {
 
@@ -354,7 +359,9 @@ body {
         flex-direction: column;
         text-align: center;
     }
-
+    #boxResult #titleResult img{
+        width: 50px;
+    }
     #boxInput input {
         font-size: 16px;
     }
@@ -366,6 +373,9 @@ body {
     #boxResult,
     #boxAvisos {
         width: 350px;
+    }
+      #boxResult #titleResult img{
+        width: 60px;
     }
 
     #boxResult #titleResult {
