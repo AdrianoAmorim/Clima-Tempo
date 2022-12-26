@@ -275,6 +275,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    
 }
 #boxAvisos label{
     color:#fff;
@@ -290,10 +291,6 @@ body {
 
 .hidden {
     display: none !important;
-}
-
-.show {
-    display: flex !important;
 }
 
 @media screen and (max-width: 400px) {

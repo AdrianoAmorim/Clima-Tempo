@@ -61,6 +61,7 @@ btnBuscar.addEventListener('click', () => {
     if(inpLocalizacao.value.length == 0){
         lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
         boxAvisos.classList.remove("hidden");
+        boxAvisos.setAttribute('class','startBox')
     }else{
         const cidade = inpLocalizacao.value;
         getClima(cidade);
