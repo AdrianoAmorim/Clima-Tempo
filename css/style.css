@@ -222,8 +222,10 @@ body {
 #boxResult #boxTemperatura {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
+    height: auto;
+    margin-bottom: 5px;
 
 }
 
@@ -239,12 +241,13 @@ body {
 #boxResult #boxTemperatura picture {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 50%;
     text-align: center;
     border-left: 4px solid #fff;
     margin: 0;
+
 }
 
 #boxResult #boxTemperatura picture label {
@@ -323,13 +326,10 @@ body {
 }
 
 .showAnimation {
- animation: slideFadeIn .3s forwards;
+ animation: slideFadeIn .5s forwards;
 }
 .fadeIn{
     animation: fadeIn .2s forwards;
-}
-.fecharBox{
-    animation: sair .3s forwards;
 }
 
 /*ANIMAÇÃO PARA APRESENTAR AS TELAS DE AVISOS E RESULTADO*/
@@ -356,16 +356,6 @@ body {
     }
     to{
         opacity: 1;
-    }
-}
-@keyframes sair {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(-40px);
-        opacity: 0;
     }
 }
 
