@@ -83,6 +83,7 @@ const setValores = async (data) => {
 }
 
 //EVENTOS
+//Funcao para Buscar o clima no clique no button
 btnBuscar.addEventListener('click', () => {
     resetCampos();
     if (inpLocalizacao.value.length == 0) {
@@ -98,6 +99,7 @@ btnBuscar.addEventListener('click', () => {
 //Funcao para buscar o clima quando apertar o ENTER
 inpLocalizacao.addEventListener("keyup", (e) => {
     if (e.code === 'Enter') {
+           resetCampos();
         if (inpLocalizacao.value.length == 0) {
             lblAvisos.innerText = "Campo vazio - Digite o nome da Cidade !"
             boxAvisos.classList.remove("hidden");
